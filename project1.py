@@ -1,4 +1,4 @@
-import random
+#ID CARD GENERATOR SYSTEM
 import datetime
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
@@ -42,12 +42,14 @@ for i in range(2,row+1):
     Koni, Bilaspur, Chattisgarh'''
     color = 'rgb(0, 0, 0)'           # black color font
     font = ImageFont.truetype('arial.ttf', size=60)
+  
     draw.text((x, y), company, fill=color, font=font)
 
 
 #Adding an unique id number. You can manually take it from user
-    (x, y) = (1180, 260)
-    idno = random.randint(10000000, 90000000)
+    (x, y) = (1000, 260)
+    # print(str('Email ID'))
+    idno = hash(sh1.cell(i,6).value)
     message = str('ID: ' + str(idno))
     color = 'rgb(0, 0, 0)'           # black color font
     font = ImageFont.truetype('arial.ttf', size=40)
@@ -143,7 +145,6 @@ for i in range(2,row+1):
     font = ImageFont.truetype('arial.ttf', size=30)
     draw.text((x, y), fgender, fill=color, font=font)
 
-
 # For the Email Id
     (x, y) = (315, 460)
     # emailid = int(sh1.cell(i,6).value)
@@ -153,11 +154,13 @@ for i in range(2,row+1):
     draw.text((x, y), femailid, fill=color, font=font)
 
 
+
+
 # Aline the all information
     (x, y) = (540, 460)
     emailid = sh1.cell(i,6).value
     femailid = str(': ' + str(emailid))
-    color = 'rgb(0, 250, 0)'               # black color font
+    color = 'rgb(0, 0, 0)'               # black color font
     font = ImageFont.truetype('arial.ttf', size=30)
     draw.text((x, y), femailid, fill=color, font=font)
 
@@ -166,7 +169,7 @@ for i in range(2,row+1):
     (x, y) = (315, 500)
     # dob = sh1.cell(i,7).value
     fdob = str('Date of Birth')
-    color = 'rgb(200, 0, 0)'                 # black color font
+    color = 'rgb(0, 0, 0)'                 # black color font
     font = ImageFont.truetype('arial.ttf', size=30)
     draw.text((x, y), fdob, fill=color, font=font)
 
